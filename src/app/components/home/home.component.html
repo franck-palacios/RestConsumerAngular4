@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a routerLink="/home">Home</a></li>
+      <li role="presentation"><a routerLink="/add">Add</a></li>
+    </ul>
+    <!-- <br> -->
+    <h4>Articles</h4>
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let article of articles">
+          <td>{{article.id}}</td>
+          <td>{{article.title}}</td>
+          <td>{{article.category}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

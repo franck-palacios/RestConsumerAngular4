@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <ul class="nav nav-tabs">
+      <li role="presentation"><a routerLink="/home">Home</a></li>
+      <li role="presentation" class="active"><a routerLink="/add">Add</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <h3>New data</h3>
+    <form (ngSubmit)="saveData()" ngNativeValidate>
+      <div class="form-group col-md-6">
+        <label class="control-label">Id</label>
+        <input type="number" name="id" [(ngModel)]="article.id" required class="form-control">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label class="control-label">Title</label>
+        <input type="text" name="title" [(ngModel)]="article.title" required class="form-control">
+      </div>
+
+      <div class="form-group col-md-6 col-md-offset-3">
+        <label class="control-label">Title</label>
+        <select class="form-control" name="category" [(ngModel)]="article.category" required>
+          <option selected disabled>Select</option>
+          <option *ngFor="let category of categories" value="{{category.name}}">{{category.description}}</option>
+        </select>
+      </div>
+      <div class="col-md-2 col-md-offset-5">
+        <button style="width: 100%" class="btn btn-primary" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+
+</div>
